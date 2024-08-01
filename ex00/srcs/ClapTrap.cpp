@@ -6,7 +6,7 @@
 /*   By: dbarrene <dbarrene@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/08/01 17:48:31 by dbarrene          #+#    #+#             */
-/*   Updated: 2024/08/01 19:06:58 by dbarrene         ###   ########.fr       */
+/*   Updated: 2024/08/02 02:48:52 by dbarrene         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -37,6 +37,9 @@ ClapTrap::~ClapTrap(){
 
 void	ClapTrap::attack(const std::string &target)
 {
+	if (this->__HitPoints < 1 || this->__Energy < 1)
+		return ;
+	this->__Energy -= 1;
 	std::cout << this->__name << " attacks " << target << " causing "
 		<< this->__Attack_Damage << " points of damage and expending one energy"
 		<< " leaving " << this->__name << " with " << this->__Energy
@@ -45,12 +48,19 @@ void	ClapTrap::attack(const std::string &target)
 
 void	ClapTrap::takeDamage(unsigned int amount)
 {
+	if (this->__HitPoints < 1)
+	{
+		std::cout << this->__name << " is dead and cannot be interacted with" << std::endl;
+		return ;
+	}
 	this->__HitPoints -= amount;
 	std::cout << this->__name << " has lost " << amount << " hit points" << std::endl;
 }
 
 void	ClapTrap::beRepaired(unsigned int amount)
 {
+	if (this->__HitPoints < 1 || this->__Energy < 1)
+		return ;
 	this->__HitPoints += amount;
 	this->__Energy -= 1;
 	std::cout << this->__name << " has repaired " << amount << " hit points and lost"

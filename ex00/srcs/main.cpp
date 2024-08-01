@@ -6,7 +6,7 @@
 /*   By: dbarrene <dbarrene@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/08/01 18:05:36 by dbarrene          #+#    #+#             */
-/*   Updated: 2024/08/01 19:07:46 by dbarrene         ###   ########.fr       */
+/*   Updated: 2024/08/02 02:43:41 by dbarrene         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,5 +18,13 @@ int	main(void)
 	ClapTrap trap("clapper");
 	clap.takeDamage(1);
 	clap.beRepaired(1);
-	clap.attack("madonna");
+	clap.attack("clapper");
+	trap.takeDamage(3);
+	trap.attack("nothing");
+	trap.beRepaired(3);
+	trap.takeDamage(8);
+	trap.attack("thin air");
+	trap.beRepaired(2);
+	trap.takeDamage(50);
+	trap.takeDamage(50);
 }

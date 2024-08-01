@@ -6,19 +6,20 @@
 /*   By: dbarrene <dbarrene@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/08/01 17:43:53 by dbarrene          #+#    #+#             */
-/*   Updated: 2024/08/01 17:51:40 by dbarrene         ###   ########.fr       */
+/*   Updated: 2024/08/02 02:45:02 by dbarrene         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
-
+#ifndef CLAPTRAP_HPP
+# define CLAPTRAP_HPP
 #include <iostream>
 
 class	ClapTrap
 {
 	private:
 		std::string __name;
-		size_t	__HitPoints;
-		size_t	__Energy;
-		size_t	__Attack_Damage;
+		int	__HitPoints;
+		int	__Energy;
+		int	__Attack_Damage;
 
 	public:
 		// member functions
@@ -34,3 +35,4 @@ class	ClapTrap
 		ClapTrap& operator=(ClapTrap const& s);
 
 };
+#endif
