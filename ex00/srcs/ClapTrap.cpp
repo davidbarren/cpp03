@@ -6,21 +6,25 @@
 /*   By: dbarrene <dbarrene@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/08/01 17:48:31 by dbarrene          #+#    #+#             */
-/*   Updated: 2024/08/02 02:48:52 by dbarrene         ###   ########.fr       */
+/*   Updated: 2024/08/04 19:48:29 by dbarrene         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../includes/ClapTrap.hpp"
 
-ClapTrap::ClapTrap(){
-	std::cout << "default constructor called for "
-		<< this->__name << std::endl;
-}
-ClapTrap::ClapTrap(std::string name): __name(name){
+ClapTrap::ClapTrap(): __name("Unknown")
+{
 	this->__HitPoints = 10;
 	this->__Energy = 10;
 	this->__Attack_Damage = 0;
-	std::cout << "constructor called for " << this->__name << std::endl;
+	std::cout << "default constructor called for "
+		<< this->__name << std::endl;
+}
+ClapTrap::ClapTrap(const std::string &name): __name(name){
+	this->__HitPoints = 10;
+	this->__Energy = 10;
+	this->__Attack_Damage = 0;
+	std::cout << "named constructor called for " << this->__name << std::endl;
 
 }
 ClapTrap::ClapTrap(ClapTrap const& s){
@@ -46,6 +50,15 @@ void	ClapTrap::attack(const std::string &target)
 		<< " energy points" << std::endl;
 }
 
+ClapTrap& ClapTrap::operator=(const ClapTrap& s)
+{
+	std::cout << "assignment operator called in class ClapTrap" << std::endl;
+	__name = s.__name;
+	__HitPoints = s.__HitPoints;
+	__Energy = s.__Energy;
+	__Attack_Damage = s.__Attack_Damage;
+	return (*this);
+}
 void	ClapTrap::takeDamage(unsigned int amount)
 {
 	if (this->__HitPoints < 1)

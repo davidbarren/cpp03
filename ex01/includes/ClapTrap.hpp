@@ -6,31 +6,42 @@
 /*   By: dbarrene <dbarrene@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/08/01 17:43:53 by dbarrene          #+#    #+#             */
-/*   Updated: 2024/08/01 17:51:40 by dbarrene         ###   ########.fr       */
+/*   Updated: 2024/08/04 19:31:45 by dbarrene         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
-
+#ifndef CLAPTRAP_HPP
+# define CLAPTRAP_HPP
 #include <iostream>
 
 class	ClapTrap
 {
 	private:
 		std::string __name;
-		size_t	__HitPoints;
-		size_t	__Energy;
-		size_t	__Attack_Damage;
-
+		int	__HitPoints;
+		int	__Energy;
+		int	__Attack_Damage;
+	protected:
+		int get_hp()const;
+		int get_energy()const;
+		int get_ad()const;
+		const std::string &get_name()const;
+		void	set_hp(unsigned int amount);
+		void	set_energy(unsigned int amount);
+		void	set_ad(unsigned int amount);
+		void	set_name(const std::string &name);
 	public:
 		// member functions
-		void	attack(const std::string& target);
+		void	print_attributes();
+		virtual void	attack(const std::string& target);
 		void	takeDamage(unsigned int amount);
 		void	beRepaired(unsigned int amount);
 		// Constructors
 		ClapTrap();
-		ClapTrap(std::string name);
+		ClapTrap(const std::string& name);
 		ClapTrap(ClapTrap const& s);
 		~ClapTrap();
 		// Overloads
 		ClapTrap& operator=(ClapTrap const& s);
 
 };
+#endif

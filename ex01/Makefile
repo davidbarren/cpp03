@@ -6,7 +6,7 @@
 #    By: dbarrene <dbarrene@student.hive.fi>        +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2024/06/26 03:46:13 by dbarrene          #+#    #+#              #
-#    Updated: 2024/08/01 18:11:58 by dbarrene         ###   ########.fr        #
+#    Updated: 2024/08/03 21:41:10 by dbarrene         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -20,6 +20,7 @@ SRCDIR = srcs
 OBJDIR = obj
 SRCS = $(SRCDIR)/main.cpp\
 	   $(SRCDIR)/ClapTrap.cpp\
+	   $(SRCDIR)/ScavTrap.cpp\
 
 OBJS = $(patsubst $(SRCDIR)/%.cpp, $(OBJDIR)/%.o, $(SRCS))
 

@@ -6,7 +6,7 @@
 /*   By: dbarrene <dbarrene@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/08/01 17:43:53 by dbarrene          #+#    #+#             */
-/*   Updated: 2024/08/02 02:45:02 by dbarrene         ###   ########.fr       */
+/*   Updated: 2024/08/03 21:36:16 by dbarrene         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 #ifndef CLAPTRAP_HPP
@@ -28,7 +28,7 @@ class	ClapTrap
 		void	beRepaired(unsigned int amount);
 		// Constructors
 		ClapTrap();
-		ClapTrap(std::string name);
+		ClapTrap(const std::string& name);
 		ClapTrap(ClapTrap const& s);
 		~ClapTrap();
 		// Overloads
