@@ -1,35 +1,27 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   main.cpp                                           :+:      :+:    :+:   */
+/*   FragTrap.hpp                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: dbarrene <dbarrene@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/08/01 18:05:36 by dbarrene          #+#    #+#             */
-/*   Updated: 2024/08/05 12:52:26 by dbarrene         ###   ########.fr       */
+/*   Created: 2024/08/01 17:43:53 by dbarrene          #+#    #+#             */
+/*   Updated: 2024/08/05 12:59:40 by dbarrene         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
+#ifndef FRAGTRAP_HPP
+# define FRAGTRAP_HPP
+#include "ClapTrap.hpp"
 
-#include "../includes/ScavTrap.hpp"
-int	main(void)
+class	FragTrap : public ClapTrap
 {
-	ClapTrap clap("clappy");
-	ScavTrap scav("scavvy");
-
-	ClapTrap clapper;
-
-	clapper = clap;
-	clap.print_attributes();
-	scav.print_attributes();
-	clap.attack("target");
-	scav.attack("target");
-	scav.guardGate();
-	ScavTrap abc;
-	abc.print_attributes();
-	abc.guardGate();
-	abc.takeDamage(69);
-	abc.beRepaired(42);
-	abc = scav;
-	abc.print_attributes();
-
-}
+	public:
+		void	highFivesGuys();
+		void	attack(const std::string &target);
+		FragTrap();
+		FragTrap(const std::string &name);
+		FragTrap(const FragTrap& other);
+		~FragTrap();
+		FragTrap& operator=(const FragTrap& other);
+};
+#endif

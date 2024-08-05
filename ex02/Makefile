@@ -6,11 +6,11 @@
 #    By: dbarrene <dbarrene@student.hive.fi>        +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2024/06/26 03:46:13 by dbarrene          #+#    #+#              #
-#    Updated: 2024/08/05 12:35:57 by dbarrene         ###   ########.fr        #
+#    Updated: 2024/08/05 13:04:21 by dbarrene         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
-NAME = ScavTrap
+NAME = FragTrap
 
 COMP = c++
 
@@ -21,6 +21,7 @@ OBJDIR = obj
 SRCS = $(SRCDIR)/main.cpp\
 	   $(SRCDIR)/ClapTrap.cpp\
 	   $(SRCDIR)/ScavTrap.cpp\
+	   $(SRCDIR)/FragTrap.cpp\
 
 OBJS = $(patsubst $(SRCDIR)/%.cpp, $(OBJDIR)/%.o, $(SRCS))
 

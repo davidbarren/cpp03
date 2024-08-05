@@ -6,18 +6,21 @@
 /*   By: dbarrene <dbarrene@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/08/01 18:05:36 by dbarrene          #+#    #+#             */
-/*   Updated: 2024/08/05 12:52:26 by dbarrene         ###   ########.fr       */
+/*   Updated: 2024/08/05 13:05:37 by dbarrene         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../includes/ScavTrap.hpp"
+#include "../includes/FragTrap.hpp"
 int	main(void)
 {
 	ClapTrap clap("clappy");
 	ScavTrap scav("scavvy");
 
 	ClapTrap clapper;
-
+	FragTrap fragster("fragster");
+	FragTrap fraggy;
+	fragster.highFivesGuys();
 	clapper = clap;
 	clap.print_attributes();
 	scav.print_attributes();
